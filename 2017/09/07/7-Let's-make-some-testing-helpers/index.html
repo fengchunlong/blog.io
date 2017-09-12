@@ -10,7 +10,7 @@
   
   <title>
     
-      laravel 笔记 | Andy&#39;s Blog
+      7-Let&#39;s-make-some-testing-helpers | Andy&#39;s Blog
     
   </title>
   <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -112,15 +112,30 @@
 </header>
 
     <div id="article-banner">
-  <h2>laravel 笔记</h2>
-  <p class="post-date">2017-09-05</p>
+  <h2>7-Let's-make-some-testing-helpers</h2>
+  <p class="post-date">2017-09-07</p>
   <div class="arrow-down">
     <a href="javascript:;"></a>
   </div>
 </div>
 <main class="app-body">
   <article class="post-article">
-    <section class="markdown-content"></section>
+    <section class="markdown-content"><p>使用函数，缩减测试代码。</p>
+<h3 id="composer-自动加载"><a href="#composer-自动加载" class="headerlink" title="composer 自动加载"></a>composer 自动加载</h3><p>  修改composer.json文件，在autoload-dev下添加files，代码如下：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="string">"autoload-dev"</span>: &#123;</div><div class="line">    <span class="string">"psr-4"</span>: &#123;</div><div class="line">        <span class="string">"Tests\\"</span>: <span class="string">"tests/"</span></div><div class="line">    &#125;,</div><div class="line">    <span class="string">"files"</span>: [<span class="string">"tests/utilities/function.php"</span>]</div><div class="line">&#125;,</div></pre></td></tr></table></figure></p>
+<h3 id="创建函数文件，编写函数。"><a href="#创建函数文件，编写函数。" class="headerlink" title="创建函数文件，编写函数。"></a>创建函数文件，编写函数。</h3><p>  创建tests/utilities/function.php。在function.php文件中，编写函数。<br>  function.php代码如下：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">create</span><span class="params">($class,$attributes=[])</span></span></div><div class="line"><span class="function">    </span>&#123;</div><div class="line">        <span class="keyword">return</span> factory($class)-&gt;create($attributes);</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">make</span><span class="params">($class,$attributes=[])</span></span></div><div class="line"><span class="function">    </span>&#123;</div><div class="line">        <span class="keyword">return</span> factory($class)-&gt;make($attributes);</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
+<p>在上述代码中，需要注意make()函数有两个参数，第一个是类名，第二个是属性名，在调用函数时，我们通常只是用第一个参数，所以将第二个参数使用默认参数的方式。否则会提示如下错误信息：<br>  Tests\Feature\CreateThreadsTest::test_guests_may_not_create_threads Failed asserting that exception of type “ErrorException” matches expected exception “Illuminate\Auth\AuthenticationException”. Message was: “Missing argument 2 for make(), called in /Users/andy/Code/Forum/tests/Feature/CreateThreadsTest.php on line 16 and defined” at</p>
+<h3 id="将函数应用到测试文件中"><a href="#将函数应用到测试文件中" class="headerlink" title="将函数应用到测试文件中"></a>将函数应用到测试文件中</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$thread = make(<span class="string">'App\Thread'</span>);</div></pre></td></tr></table></figure>
+<h3 id="使用composer-dump-autoload-命令"><a href="#使用composer-dump-autoload-命令" class="headerlink" title="使用composer dump-autoload 命令"></a>使用composer dump-autoload 命令</h3><p>  此时使用phpunit会报错，提示函数不错在。要重启composer,然后才能自动加载tests/utilities/function.php这个文件。使用命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">composer dump-autoload</div></pre></td></tr></table></figure></p>
+</section>
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#Laracasts   Create-Forum" >
+    <span class="tag-code">Laracasts   Create-Forum</span>
+  </a>
+
+      </div>
     
     <div class="money-like">
       <div class="reward-btn">
@@ -150,7 +165,7 @@
 
 <script>
   (function () {
-    var url = 'http://yoursite.com/2017/09/05/laravel-笔记/';
+    var url = 'http://yoursite.com/2017/09/07/7-Let&#39;s-make-some-testing-helpers/';
     var banner = ''
     if (banner !== 'undefined') {
       $('#article-banner').css({
@@ -201,7 +216,7 @@
     var gitmentConfig = "fengchunlong";
     if (gitmentConfig != "undefined") {
       var gitment = new Gitment({
-        id: "laravel 笔记",
+        id: "7-Let's-make-some-testing-helpers",
         owner: "fengchunlong",
         repo: "fengchunlong.github.io",
         oauth: {

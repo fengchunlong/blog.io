@@ -10,7 +10,7 @@
   
   <title>
     
-      laravel 笔记 | Andy&#39;s Blog
+      8-the-exception-handing-conundrum | Andy&#39;s Blog
     
   </title>
   <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -112,15 +112,28 @@
 </header>
 
     <div id="article-banner">
-  <h2>laravel 笔记</h2>
-  <p class="post-date">2017-09-05</p>
+  <h2>8-the-exception-handing-conundrum</h2>
+  <p class="post-date">2017-09-12</p>
   <div class="arrow-down">
     <a href="javascript:;"></a>
   </div>
 </div>
 <main class="app-body">
   <article class="post-article">
-    <section class="markdown-content"></section>
+    <section class="markdown-content"><h3 id="使用Route-resource"><a href="#使用Route-resource" class="headerlink" title="使用Route::resource"></a>使用Route::resource</h3><p>使用resource可以替换get和post方式中的内置方法。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Route::resource(<span class="string">'threads'</span>,<span class="string">'ThreadsController'</span>);</div><div class="line"><span class="comment">//Route::get('/threads','ThreadsController@index');</span></div><div class="line"><span class="comment">//Route::get('/threads','ThreadsController@create');</span></div><div class="line"><span class="comment">//Route::post('/threads','ThreadsController@store');</span></div><div class="line"><span class="comment">//Route::get('/threads/&#123;thread&#125;','ThreadsController@show');</span></div></pre></td></tr></table></figure>
+<h3 id="middleware使用only-和-except"><a href="#middleware使用only-和-except" class="headerlink" title="middleware使用only 和 except"></a>middleware使用only 和 except</h3><p>except 和 only 是互逆操作。例如不对控制器中的index 和show方法添加auth验证,代码如下：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span><span class="params">()</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">    <span class="keyword">$this</span>-&gt;middleware(<span class="string">'auth'</span>)-&gt;except(<span class="string">'index'</span>,<span class="string">'show'</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</section>
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#Laravel Forum" >
+    <span class="tag-code">Laravel Forum</span>
+  </a>
+
+      </div>
     
     <div class="money-like">
       <div class="reward-btn">
@@ -150,7 +163,7 @@
 
 <script>
   (function () {
-    var url = 'http://yoursite.com/2017/09/05/laravel-笔记/';
+    var url = 'http://yoursite.com/2017/09/12/8-the-exception-handing-conundrum/';
     var banner = ''
     if (banner !== 'undefined') {
       $('#article-banner').css({
@@ -201,7 +214,7 @@
     var gitmentConfig = "fengchunlong";
     if (gitmentConfig != "undefined") {
       var gitment = new Gitment({
-        id: "laravel 笔记",
+        id: "8-the-exception-handing-conundrum",
         owner: "fengchunlong",
         repo: "fengchunlong.github.io",
         oauth: {
