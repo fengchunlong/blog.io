@@ -39,7 +39,7 @@
       
         <li class="list-item">
           
-            <a href="/" class="item-link active">Home</a>
+            <a href="/" class="item-link">Home</a>
           
         </li>
       
@@ -78,7 +78,7 @@
         
           <li class="menu-item">
             
-              <a href="/" class="menu-link mobile-active">Home</a>
+              <a href="/" class="menu-link">Home</a>
             
           </li>
         
@@ -111,69 +111,48 @@
   </div>
 </header>
 
-    <main class="app-body">
+    <div id="article-banner">
+  <h2>Archives</h2>
+  <p class="post-date">文章归档</p>
+</div>
+<main class="app-body" id="archives">
   
-    <article class="article-card">
-      <h2 class="article-head">
-        <a href="/2017/09/12/8-the-exception-handing-conundrum/">8-the-exception-handing-conundrum</a>
-      </h2>
-      <p class="article-date">September 12, 2017</p>
-      
-        
-  <a href="/tags#Laravel Create-Forum" >
-    <span class="tag-code">Laravel Create-Forum</span>
-  </a>
-
-      
-      <div class="article-summary">
-        
-          使用Route::resource使用resource可以替换get和post方式中的内置方法。
-12345Route::resource('threads','ThreadsController');//Route::get('/threads','ThreadsController@in ...
-        
+  
+  
+    <section class="time-section">
+  <h1 class="section-year">
+    2017
+  </h1>
+  <div class="section-list">
+    
+    
+      <div class="section-list-item">
+        <a href="/2017/09/12/8-the-exception-handing-conundrum/" class="archive-title">8-the-exception-handing-conundrum</a>
+        <p class="archive-date">09-12</p>
       </div>
-      <a class="more" href="/2017/09/12/8-the-exception-handing-conundrum/">Read more</a>
-    </article>
-  
-    <article class="article-card">
-      <h2 class="article-head">
-        <a href="/2017/09/07/7-Let's-make-some-testing-helpers/">7-Let's-make-some-testing-helpers</a>
-      </h2>
-      <p class="article-date">September 7, 2017</p>
-      
-        
-  <a href="/tags#Laracasts   Create-Forum" >
-    <span class="tag-code">Laracasts   Create-Forum</span>
-  </a>
-
-      
-      <div class="article-summary">
-        
-          使用函数，缩减测试代码。
-composer 自动加载  修改composer.json文件，在autoload-dev下添加files，代码如下：123456"autoload-dev": &#123;    "psr-4": &#123;        "Tests\\": "tests/ ...
-        
+    
+      <div class="section-list-item">
+        <a href="/2017/09/07/7-Let&#39;s-make-some-testing-helpers/" class="archive-title">7-Let&#39;s-make-some-testing-helpers</a>
+        <p class="archive-date">09-07</p>
       </div>
-      <a class="more" href="/2017/09/07/7-Let's-make-some-testing-helpers/">Read more</a>
-    </article>
-  
-    <article class="article-card">
-      <h2 class="article-head">
-        <a href="/2017/09/03/hello-world/">Hello World</a>
-      </h2>
-      <p class="article-date">September 3, 2017</p>
-      
-      <div class="article-summary">
-        
-          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer ...
-        
+    
+      <div class="section-list-item">
+        <a href="/2017/09/03/hello-world/" class="archive-title">Hello World</a>
+        <p class="archive-date">09-03</p>
       </div>
-      <a class="more" href="/2017/09/03/hello-world/">Read more</a>
-    </article>
-  
-
+    
+  </div>
+</section>
   
 </main>
 
-
+<script>
+  (function () {
+    var url = 'http://yoursite.com/tags/Laravel-Create-Forum/index.html';
+    $('#article-banner').geopattern(url);
+    $('.header').removeClass('fixed-header');
+  })();
+</script>
     <div class="scroll-top">
   <span class="arrow-icon"></span>
 </div>
