@@ -10,7 +10,7 @@
   
   <title>
     
-      each()函数和list()函数 | Andy&#39;s Blog
+      Linux 基础命令 | Andy&#39;s Blog
     
   </title>
   <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -112,8 +112,8 @@
 </header>
 
     <div id="article-banner">
-  <h2>each()函数和list()函数</h2>
-  <p class="post-date">2017-09-22</p>
+  <h2>Linux 基础命令</h2>
+  <p class="post-date">2017-09-24</p>
   <div class="arrow-down">
     <a href="javascript:;"></a>
   </div>
@@ -121,18 +121,38 @@
 <main class="app-body">
   <article class="post-article">
     <section class="markdown-content"><ul>
-<li>each — 返回数组中当前的键／值对并将数组指针向前移动一步。</li>
-<li>list — 把数组中的值赋给一组变量。</li>
+<li><p>常用缩写<br>b: back<br>f: farword<br>q: quite</p>
+</li>
+<li><p>帮助</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ls --<span class="built_in">help</span></div></pre></td></tr></table></figure>
+</li>
 </ul>
-<p>each() 经常和 list() 结合使用来遍历数组，例如，用 each() 遍历数组的代码如下：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$fruit = <span class="keyword">array</span>(<span class="string">'a'</span> =&gt; <span class="string">'apple'</span>, <span class="string">'b'</span> =&gt; <span class="string">'banana'</span>, <span class="string">'c'</span> =&gt; <span class="string">'cranberry'</span>);</div><div class="line">reset($fruit);</div><div class="line"><span class="keyword">while</span> (<span class="keyword">list</span>($key, $val) = each($fruit)) &#123;</div><div class="line">    <span class="keyword">echo</span> <span class="string">"$key =&gt; $val\n"</span>;</div><div class="line">&#125;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure></p>
-<p>上述代码中each()函数返回数组中当前的键值对，第一次循环时，数组为 array(‘a’,’apple’),然后使用list()函数复制给变量$key和$val，接着执行循环体。由于数组的指针下移，当再次执行while循环时， 数组为array(‘b’,’banana’)。所以，上述代码运行结果为：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">a =&gt; apple</div><div class="line">b =&gt; banana</div><div class="line">c =&gt; cranberry</div></pre></td></tr></table></figure></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">man ls</div></pre></td></tr></table></figure>
+<p>通过F键，向下翻屏<br>通过F键，向上翻屏</p>
+<ul>
+<li><p>历史记录</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">history</span> ： 历史命令</div><div class="line">！223 ：执行第233行命令</div></pre></td></tr></table></figure>
+</li>
+<li><p>重定向</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt;  将命令结果写入文件</div><div class="line">&gt;  &gt; 将命令追加文件，如果文件不存在，则与&gt; 运行结果相同</div></pre></td></tr></table></figure>
+</li>
+<li><p>查询</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cat </div><div class="line">more</div></pre></td></tr></table></figure>
+</li>
+<li><p>管道</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ls -alh /bin | more  </div><div class="line">| 就相当于管道，将内容注入管道中</div></pre></td></tr></table></figure>
+</li>
+<li><p>路径</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">相对路径</div><div class="line">绝对路径</div><div class="line">cd - 返回</div><div class="line">~  家目录</div></pre></td></tr></table></figure>
 </section>
     
       <div class="tags">
         <span>Tags:</span>
         
-  <a href="/tags#PHP基础" >
-    <span class="tag-code">PHP基础</span>
+  <a href="/tags#Linux" >
+    <span class="tag-code">Linux</span>
   </a>
 
       </div>
@@ -165,7 +185,7 @@
 
 <script>
   (function () {
-    var url = 'http://yoursite.com/2017/09/22/each-函数和list-函数/';
+    var url = 'http://yoursite.com/2017/09/24/Linux-基础命令/';
     var banner = ''
     if (banner !== 'undefined') {
       $('#article-banner').css({
@@ -216,7 +236,7 @@
     var gitmentConfig = "fengchunlong";
     if (gitmentConfig != "undefined") {
       var gitment = new Gitment({
-        id: "each()函数和list()函数",
+        id: "Linux 基础命令",
         owner: "fengchunlong",
         repo: "fengchunlong.github.io",
         oauth: {
