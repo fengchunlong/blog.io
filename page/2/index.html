@@ -39,7 +39,7 @@
       
         <li class="list-item">
           
-            <a href="/" class="item-link">Home</a>
+            <a href="/" class="item-link active">Home</a>
           
         </li>
       
@@ -78,7 +78,7 @@
         
           <li class="menu-item">
             
-              <a href="/" class="menu-link">Home</a>
+              <a href="/" class="menu-link mobile-active">Home</a>
             
           </li>
         
@@ -111,88 +111,36 @@
   </div>
 </header>
 
-    <div id="article-banner">
-  <h2>Archives</h2>
-  <p class="post-date">文章归档</p>
+    <main class="app-body">
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/2017/09/03/hello-world/">Hello World</a>
+      </h2>
+      <p class="article-date">September 3, 2017</p>
+      
+      <div class="article-summary">
+        
+          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer ...
+        
+      </div>
+      <a class="more" href="/2017/09/03/hello-world/">Read more</a>
+    </article>
+  
+
+  
+    <div class="guide-pager">
+  
+    <a href="/"><span class="page-arrow">← </span>Prev</a>
+  
+  
+    <a class="unvisible" href="/">Next <span class="page-arrow">→</span></a>
+  
 </div>
-<main class="app-body" id="archives">
-  
-  
-  
-    <section class="time-section">
-  <h1 class="section-year">
-    2017
-  </h1>
-  <div class="section-list">
-    
-    
-      <div class="section-list-item">
-        <a href="/2017/10/04/for-else的用法/" class="archive-title">for-else的用法</a>
-        <p class="archive-date">10-04</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/2017/10/03/Python列表和字典/" class="archive-title">Python列表</a>
-        <p class="archive-date">10-03</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/2017/10/03/mac下配置vim/" class="archive-title"></a>
-        <p class="archive-date">10-03</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/2017/10/02/基础知识/" class="archive-title">基础知识</a>
-        <p class="archive-date">10-02</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/2017/10/02/vim命令/" class="archive-title">vim命令</a>
-        <p class="archive-date">10-02</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/2017/09/24/Linux-基础命令/" class="archive-title">Linux 基础命令</a>
-        <p class="archive-date">09-24</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/2017/09/22/each-函数和list-函数/" class="archive-title">each()函数和list()函数</a>
-        <p class="archive-date">09-22</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/2017/09/19/how-to-learn-Python/" class="archive-title">how to learn Python</a>
-        <p class="archive-date">09-19</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/2017/09/12/8-the-exception-handing-conundrum/" class="archive-title">8-the-exception-handing-conundrum</a>
-        <p class="archive-date">09-12</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/2017/09/07/7-Let&#39;s-make-some-testing-helpers/" class="archive-title">7-Let&#39;s-make-some-testing-helpers</a>
-        <p class="archive-date">09-07</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/2017/09/03/hello-world/" class="archive-title">Hello World</a>
-        <p class="archive-date">09-03</p>
-      </div>
-    
-  </div>
-</section>
   
 </main>
 
-<script>
-  (function () {
-    var url = 'http://yoursite.com/tags/Laracasts-Create-Forum/index.html';
-    $('#article-banner').geopattern(url);
-    $('.header').removeClass('fixed-header');
-  })();
-</script>
+
     <div class="scroll-top">
   <span class="arrow-icon"></span>
 </div>

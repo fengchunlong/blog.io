@@ -10,7 +10,7 @@
   
   <title>
     
-      Linux 基础命令 | Andy&#39;s Blog
+      for-else的用法 | Andy&#39;s Blog
     
   </title>
   <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -112,66 +112,29 @@
 </header>
 
     <div id="article-banner">
-  <h2>Linux 基础命令</h2>
-  <p class="post-date">2017-09-24</p>
+  <h2>for-else的用法</h2>
+  <p class="post-date">2017-10-04</p>
   <div class="arrow-down">
     <a href="javascript:;"></a>
   </div>
 </div>
 <main class="app-body">
   <article class="post-article">
-    <section class="markdown-content"><ul>
-<li><p>常用缩写<br>b: back<br>f: farword<br>q: quite</p>
-</li>
-<li><p>帮助</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ls --<span class="built_in">help</span></div><div class="line">man ls</div></pre></td></tr></table></figure>
-<p>通过F键，向下翻屏<br>通过F键，向上翻屏</p>
-</li>
-<li><p>历史记录</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">history</span> <span class="comment">#历史命令</span></div><div class="line">！223 <span class="comment">#执行第233行命令</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>重定向</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt;  <span class="comment">#将命令结果写入文件</span></div><div class="line">&gt;&gt; <span class="comment">#将命令追加文件，如果文件不存在，则与&gt; 运行结果相同</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>查询</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cat </div><div class="line">more</div></pre></td></tr></table></figure>
-</li>
-<li><p>管道</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ls -alh /bin | more  <span class="comment"># | 就相当于管道，将内容注入管道中</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>路径</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">相对路径</div><div class="line">绝对路径</div><div class="line"><span class="built_in">cd</span> - 返回</div><div class="line">~  家目录</div></pre></td></tr></table></figure>
-</li>
-<li><p>创建文件夹</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mkdir A</div><div class="line">mkdir A/B/C/D/E -p  <span class="comment">#创建不存在的文件夹</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>查找<br>grep查找文件内容</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">grep   <span class="string">'abc'</span>  content.txt  </div><div class="line">grep   <span class="string">'abc'</span>  -n content.txt  <span class="comment">#显示行号</span></div><div class="line">grep   <span class="string">'abc'</span>  -v content.txt  <span class="comment">#取反</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>find查找</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">find ./ -name hello-world.md </div><div class="line">find ./ -name <span class="string">'*llo*'</span></div><div class="line">find ./ -name <span class="string">'[A-Z]'</span></div><div class="line">find ./ -size 2M <span class="comment">#大小为2M</span></div><div class="line">find ./ -size +4k -size -5M <span class="comment">#大于4k,小于5M</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>压缩与解压</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">tar -cvf test.tar  *.py <span class="comment">#将*.py文件打包为test.tar文件，该命令只打包，不压缩</span></div><div class="line">tar -xvf test.tar  <span class="comment">#解包</span></div><div class="line">tar -zcvf test.tar.gz *.py <span class="comment">#打包并压缩为gz文件包</span></div><div class="line">tar -zxvf test.tar.gz <span class="comment">#解压缩</span></div><div class="line">tar -zxvf test.tar.gz  -C home/   <span class="comment">#-C参数解压到指定目录 </span></div><div class="line"></div><div class="line">tar -jcvf test.tar.bz2  *.py <span class="comment">#打包并压缩为bz2文件包</span></div><div class="line">tar -jxvf test.tar.bz2  *.py <span class="comment">#解压缩</span></div><div class="line"></div><div class="line"></div><div class="line">zip test.zip *.py <span class="comment">#打包并压缩为zip文件包</span></div><div class="line">unzip test.zip <span class="comment">#解压缩</span></div><div class="line">unzip -d  home/ test.zip  <span class="comment">#-d参数解压到指定路径</span></div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>压缩效率(占用空间小)： gz &gt;bz2&gt;zip</p>
+    <section class="markdown-content"><p>已知有一个列表，内容如下：<br>student = [{‘name’:’张三’,’age’:18,’sex’:’男’},{‘name’:’李四’,’age’:20,’s    ex’:’女’}]<br>查找输入的名称在列表中是否存在。</p>
 <ul>
-<li><p>查看命令所在位置which</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">which</span> ls  <span class="comment">#查看ls命令所在位置</span></div></pre></td></tr></table></figure>
+<li><p>方式一<br>使用flag标识</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">student = [&#123;<span class="string">'name'</span>:<span class="string">'张三'</span>,<span class="string">'age'</span>:<span class="number">18</span>,<span class="string">'sex'</span>:<span class="string">'男'</span>&#125;,&#123;<span class="string">'name'</span>:<span class="string">'李四'</span>,<span class="string">'age'</span>:<span class="number">20</span>,<span class="string">'s    ex'</span>:<span class="string">'女'</span>&#125;]</div><div class="line">name = input(<span class="string">"请输入姓名"</span>)</div><div class="line">find_flag = <span class="number">0</span> <span class="comment"># 为flag赋初值</span></div><div class="line"><span class="keyword">for</span> temp <span class="keyword">in</span> student :</div><div class="line">    <span class="keyword">if</span> (name == temp[<span class="string">'name'</span>]):</div><div class="line">	    print(<span class="string">'找到了'</span>)</div><div class="line">		find_flag = <span class="number">1</span> <span class="comment"># 更改flag </span></div><div class="line">		<span class="keyword">break</span> </div><div class="line"><span class="keyword">if</span> find_flag == <span class="number">0</span></div><div class="line">    print(<span class="string">'没找到'</span>)</div></pre></td></tr></table></figure>
 </li>
-<li><p>查看进程</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">ps -aux </div><div class="line">top</div><div class="line">htop</div><div class="line"><span class="built_in">kill</span> pid    <span class="comment">#杀死进程</span></div><div class="line"><span class="built_in">kill</span> -9 9822 <span class="comment">#强制删除</span></div></pre></td></tr></table></figure>
-</li>
+<li><p>方式二<br>使用for-else方式，如果for循环中包含break,执行break语句则不执行else，否则for循环结束后，会执行一次else语句。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">student = [&#123;<span class="string">'name'</span>:<span class="string">'张三'</span>,<span class="string">'age'</span>:<span class="number">18</span>,<span class="string">'sex'</span>:<span class="string">'男'</span>&#125;,&#123;<span class="string">'name'</span>:<span class="string">'李四'</span>,<span class="string">'age'</span>:<span class="number">20</span>,<span class="string">'s    ex'</span>:<span class="string">'女'</span>&#125;]</div><div class="line">name = input(<span class="string">"请输入姓名"</span>)</div><div class="line"><span class="keyword">for</span> temp <span class="keyword">in</span> student :</div><div class="line">	<span class="keyword">if</span> (name == temp[<span class="string">'name'</span>]):</div><div class="line">		print(<span class="string">'找到了'</span>)</div><div class="line">	<span class="keyword">break</span> </div><div class="line"><span class="keyword">else</span>:</div><div class="line">	print(<span class="string">'没找到'</span>)</div></pre></td></tr></table></figure></li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">reboot <span class="comment">#重启</span></div><div class="line">shutdown -h now  <span class="comment">#立刻关机</span></div><div class="line">shutdown -h +10 <span class="comment"># 10分钟后关机</span></div><div class="line">shutdown -h 20:25 <span class="comment">#今晚20点25分关机</span></div></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">df</div><div class="line">du</div></pre></td></tr></table></figure></section>
+</section>
     
       <div class="tags">
         <span>Tags:</span>
         
-  <a href="/tags#Linux" >
-    <span class="tag-code">Linux</span>
+  <a href="/tags#Python" >
+    <span class="tag-code">Python</span>
   </a>
 
       </div>
@@ -204,7 +167,7 @@
 
 <script>
   (function () {
-    var url = 'http://yoursite.com/2017/09/24/Linux-基础命令/';
+    var url = 'http://yoursite.com/2017/10/04/for-else的用法/';
     var banner = ''
     if (banner !== 'undefined') {
       $('#article-banner').css({
@@ -255,7 +218,7 @@
     var gitmentConfig = "fengchunlong";
     if (gitmentConfig != "undefined") {
       var gitment = new Gitment({
-        id: "Linux 基础命令",
+        id: "for-else的用法",
         owner: "fengchunlong",
         repo: "fengchunlong.github.io",
         oauth: {
