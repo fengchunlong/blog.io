@@ -115,9 +115,9 @@
   
     <article class="article-card">
       <h2 class="article-head">
-        <a href="/2017/10/04/for-else的用法/">for-else的用法</a>
+        <a href="/2017/11/24/Python动态添加属性和方法/">Python动态添加属性和方法</a>
       </h2>
-      <p class="article-date">October 4, 2017</p>
+      <p class="article-date">November 24, 2017</p>
       
         
   <a href="/tags#Python" >
@@ -127,20 +127,72 @@
       
       <div class="article-summary">
         
-          已知有一个列表，内容如下：student = [{‘name’:’张三’,’age’:18,’sex’:’男’},{‘name’:’李四’,’age’:20,’s    ex’:’女’}]查找输入的名称在列表中是否存在。
+          添加属性
+为对象添加属性
 
-方式一使用flag标识
-12345678910student = [ ...
+12345678910111213141516171819class Sport(object)&#123;    def __init__(self,age,gender):		self.age = age    	self.gender = gender&#1 ...
         
       </div>
-      <a class="more" href="/2017/10/04/for-else的用法/">Read more</a>
+      <a class="more" href="/2017/11/24/Python动态添加属性和方法/">Read more</a>
     </article>
   
     <article class="article-card">
       <h2 class="article-head">
-        <a href="/2017/10/03/Python列表和字典/">Python列表</a>
+        <a href="/2017/10/31/Python-Flask-From-Scratch-Part-2-User/">Python Flask From Scratch [Part 2] - User </a>
       </h2>
-      <p class="article-date">October 3, 2017</p>
+      <p class="article-date">October 31, 2017</p>
+      
+        
+  <a href="/tags#Python Flask" >
+    <span class="tag-code">Python Flask</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          安装类库
+必须在virtualenv 环境下安装。
+12345vitrualenv venv. venv/bin/activatepip install flask-mysqldbpip install Flask-WTFpip install passlib
+​
+
+
+
+        
+      </div>
+      <a class="more" href="/2017/10/31/Python-Flask-From-Scratch-Part-2-User/">Read more</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/2017/10/26/Mac下homebrew-安装MySQL/">Mac下homebrew 安装MySQL</a>
+      </h2>
+      <p class="article-date">October 26, 2017</p>
+      
+        
+  <a href="/tags#homebrew安装软件" >
+    <span class="tag-code">homebrew安装软件</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          安装使用homebrew 安装mysql,命令如下：
+1brew install mysql
+启动MySQL1mysql.server start
+设置密码1mysql_secure_installation
+运行mysql_secure_installation会执行几个设置：
+
+为roo ...
+        
+      </div>
+      <a class="more" href="/2017/10/26/Mac下homebrew-安装MySQL/">Read more</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/2017/10/08/面向对象知识点总结/">面向对象知识点总结</a>
+      </h2>
+      <p class="article-date">October 8, 2017</p>
       
         
   <a href="/tags#Python" >
@@ -150,38 +202,38 @@
       
       <div class="article-summary">
         
-          列表更删改查增加name = [“张三”,”李四”,”王五”]
-
-name.append(‘赵六’)  # [“张三”,”李四”,”王五”,”赵六”]
-name.insert(‘位置’,’插入的值’’)
-name.extend(name2); #添加已有列表，组成新列表
-
-删除
-name.p ...
+          python新式类和经典类的区别？新式类和经典类的区别
+类属性、类方法和实例属性、实例方法的使用
         
       </div>
-      <a class="more" href="/2017/10/03/Python列表和字典/">Read more</a>
+      <a class="more" href="/2017/10/08/面向对象知识点总结/">Read more</a>
     </article>
   
     <article class="article-card">
       <h2 class="article-head">
-        <a href="/2017/10/03/mac下配置vim/"></a>
+        <a href="/2017/10/07/面向对象应用/">面向对象应用</a>
       </h2>
-      <p class="article-date">October 3, 2017</p>
+      <p class="article-date">October 7, 2017</p>
+      
+        
+  <a href="/tags#Python" >
+    <span class="tag-code">Python</span>
+  </a>
+
       
       <div class="article-summary">
         
-          
+          面向对象应用1123456789101112131415161718192021222324252627282930class SweetPotato :    def __init__(self):        self.cookedLevel = 0        self.cooke ...
         
       </div>
-      <a class="more" href="/2017/10/03/mac下配置vim/">Read more</a>
+      <a class="more" href="/2017/10/07/面向对象应用/">Read more</a>
     </article>
   
     <article class="article-card">
       <h2 class="article-head">
-        <a href="/2017/10/02/基础知识/">基础知识</a>
+        <a href="/2017/10/07/文件操作/">文件操作</a>
       </h2>
-      <p class="article-date">October 2, 2017</p>
+      <p class="article-date">October 7, 2017</p>
       
         
   <a href="/tags#Python" >
@@ -192,105 +244,18 @@ name.p ...
       <div class="article-summary">
         
           
-换行
-
-
-print()函数默认换行
-end参数可以不换行，如1print("*",end='')
-
-
-
+read，readline，readlines区别f.read() # 读取整个文件，结果为字符串readline  #读取一行，指针下移，结果为字符串readlines # 读取全部文件，结果为列表，一行为一个元素，注意包含换行\npyhton
+f = open(&#39;全局变量.py ...
         
       </div>
-      <a class="more" href="/2017/10/02/基础知识/">Read more</a>
+      <a class="more" href="/2017/10/07/文件操作/">Read more</a>
     </article>
   
     <article class="article-card">
       <h2 class="article-head">
-        <a href="/2017/10/02/vim命令/">vim命令</a>
+        <a href="/2017/10/07/字符串操作/">字符串操作</a>
       </h2>
-      <p class="article-date">October 2, 2017</p>
-      
-        
-  <a href="/tags#Vim" >
-    <span class="tag-code">Vim</span>
-  </a>
-
-      
-      <div class="article-summary">
-        
-          输入模式
-输入提示输入单词，按shift+n键，自动提示
-
-打开文件后，光标直接指向某行python3  test.py +11 # 直接指向第11行
-
-
-
-        
-      </div>
-      <a class="more" href="/2017/10/02/vim命令/">Read more</a>
-    </article>
-  
-    <article class="article-card">
-      <h2 class="article-head">
-        <a href="/2017/09/24/Linux-基础命令/">Linux 基础命令</a>
-      </h2>
-      <p class="article-date">September 24, 2017</p>
-      
-        
-  <a href="/tags#Linux" >
-    <span class="tag-code">Linux</span>
-  </a>
-
-      
-      <div class="article-summary">
-        
-          
-常用缩写b: backf: farwordq: quite
-
-帮助
-12ls --helpman ls
-通过F键，向下翻屏通过F键，向上翻屏
-
-历史记录
-12history #历史命令！223 #执行第233行命令
-
-重定向
-12&gt;  #将命令结果写入文件&gt;&gt; #将命令追 ...
-        
-      </div>
-      <a class="more" href="/2017/09/24/Linux-基础命令/">Read more</a>
-    </article>
-  
-    <article class="article-card">
-      <h2 class="article-head">
-        <a href="/2017/09/22/each-函数和list-函数/">each()函数和list()函数</a>
-      </h2>
-      <p class="article-date">September 22, 2017</p>
-      
-        
-  <a href="/tags#PHP基础" >
-    <span class="tag-code">PHP基础</span>
-  </a>
-
-      
-      <div class="article-summary">
-        
-          
-each — 返回数组中当前的键／值对并将数组指针向前移动一步。
-list — 把数组中的值赋给一组变量。
-
-each() 经常和 list() 结合使用来遍历数组，例如，用 each() 遍历数组的代码如下：1234567&lt;?php$fruit = array('a' =&gt;  ...
-        
-      </div>
-      <a class="more" href="/2017/09/22/each-函数和list-函数/">Read more</a>
-    </article>
-  
-    <article class="article-card">
-      <h2 class="article-head">
-        <a href="/2017/09/19/how-to-learn-Python/">how to learn Python</a>
-      </h2>
-      <p class="article-date">September 19, 2017</p>
+      <p class="article-date">October 7, 2017</p>
       
         
   <a href="/tags#Python" >
@@ -300,53 +265,92 @@ each() 经常和 list() 结合使用来遍历数组，例如，用 each() 遍历
       
       <div class="article-summary">
         
-          在Quora上看到这样一个问题How should I start learning Python?  ,对Vik-Paruchuri的一个回答非常认同，分享给大家看。原文如下。
-The most important question to answer first is why do I  ...
+          查找
+find查找字符串，如果查到返回第一个找到的字符串的下标，如果没查到，返回-1.
+
+rfind 从右侧查找
+
+
+index查找字符串，如果查到返回第一个找到的字符串的下标，如果没查到，返回错误信息.
+
+rindex 从右侧查找
+
+
+
+统计次数
+count查找返回个数，不存在为0.
+
+替 ...
         
       </div>
-      <a class="more" href="/2017/09/19/how-to-learn-Python/">Read more</a>
+      <a class="more" href="/2017/10/07/字符串操作/">Read more</a>
     </article>
   
     <article class="article-card">
       <h2 class="article-head">
-        <a href="/2017/09/12/8-the-exception-handing-conundrum/">8-the-exception-handing-conundrum</a>
+        <a href="/2017/10/06/全局变量/">全局变量</a>
       </h2>
-      <p class="article-date">September 12, 2017</p>
+      <p class="article-date">October 6, 2017</p>
       
         
-  <a href="/tags#Laravel Create-Forum" >
-    <span class="tag-code">Laravel Create-Forum</span>
+  <a href="/tags#Python" >
+    <span class="tag-code">Python</span>
   </a>
 
       
       <div class="article-summary">
         
-          创建发布主题页面，只有登录后才能发布主题。游客不能访问发布主题的页面。
-创建路由创建主题的路由是Route::get(‘/threads/create’,’ThreadsController@create’);使用resource可以替换get和post方式中的内置方法，代码如下：12345 ...
+          写在函数外面的变量是全局变量，在任何地方都可以使用；写在函数内部的变量是局部变量，只能在函数内部使用。如果想在函数内容修改全局变量，可以使用global关键字声明变量。
+
+实例一
+
+12345678num = 100def get_num(num):    num+=1    print(n ...
         
       </div>
-      <a class="more" href="/2017/09/12/8-the-exception-handing-conundrum/">Read more</a>
+      <a class="more" href="/2017/10/06/全局变量/">Read more</a>
     </article>
   
     <article class="article-card">
       <h2 class="article-head">
-        <a href="/2017/09/07/7-Let's-make-some-testing-helpers/">7-Let's-make-some-testing-helpers</a>
+        <a href="/2017/10/06/匿名函数/">匿名函数</a>
       </h2>
-      <p class="article-date">September 7, 2017</p>
+      <p class="article-date">October 6, 2017</p>
       
         
-  <a href="/tags#Laracasts   Create-Forum" >
-    <span class="tag-code">Laracasts   Create-Forum</span>
+  <a href="/tags#Python" >
+    <span class="tag-code">Python</span>
   </a>
 
       
       <div class="article-summary">
         
-          使用函数，缩减测试代码。
-composer 自动加载  修改composer.json文件，在autoload-dev下添加files，代码如下：123456"autoload-dev": &#123;    "psr-4": &#123;        "Tests\\": "tests/ ...
+          使用方法1sum = lambda x,y : x+y
+上述代码中，lambda是关键字， x,y是两个参数，x+y是表达式。匿名函数不需要返回值。
+使用场景11234students = [&#123;'name':'zhangsan','age':18&#125;,&#123;'name ...
         
       </div>
-      <a class="more" href="/2017/09/07/7-Let's-make-some-testing-helpers/">Read more</a>
+      <a class="more" href="/2017/10/06/匿名函数/">Read more</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/2017/10/05/函数相关/">函数相关</a>
+      </h2>
+      <p class="article-date">October 5, 2017</p>
+      
+        
+  <a href="/tags#Python" >
+    <span class="tag-code">Python</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          函数多个返回值
+返回元组12345678def divid(a,b):    shang = a//b    yushu = a%b    return shang,yushu # 实质就是返回元组print(divid(8,3))sh,yu = divid(8,3)print(sh)pri ...
+        
+      </div>
+      <a class="more" href="/2017/10/05/函数相关/">Read more</a>
     </article>
   
 
