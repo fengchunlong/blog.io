@@ -4,7 +4,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   <meta name="description" content="Andy&#39;s Blog">
-  <meta name="keyword" content="laravel, PHP">
+  <meta name="keyword" content="hexo-theme, vuejs">
   
     <link rel="shortcut icon" href="/css/images/logo.png">
   
@@ -39,31 +39,25 @@
       
         <li class="list-item">
           
-            <a href="/" class="item-link">Home</a>
+            <a href="/" class="item-link">主页</a>
           
         </li>
       
         <li class="list-item">
           
-            <a href="/tags/" class="item-link">Tags</a>
+            <a href="/tags/" class="item-link">标签</a>
           
         </li>
       
         <li class="list-item">
           
-            <a href="/archives/" class="item-link">Archives</a>
+            <a href="/archives/" class="item-link">归类</a>
           
         </li>
       
         <li class="list-item">
           
-            <a href="/project/" class="item-link">Projects</a>
-          
-        </li>
-      
-        <li class="list-item">
-          
-            <a href="/about/" class="item-link">About</a>
+            <a href="/about/" class="item-link">关于</a>
           
         </li>
       
@@ -78,31 +72,25 @@
         
           <li class="menu-item">
             
-              <a href="/" class="menu-link">Home</a>
+              <a href="/" class="menu-link">主页</a>
             
           </li>
         
           <li class="menu-item">
             
-              <a href="/tags/" class="menu-link">Tags</a>
+              <a href="/tags/" class="menu-link">标签</a>
             
           </li>
         
           <li class="menu-item">
             
-              <a href="/archives/" class="menu-link">Archives</a>
+              <a href="/archives/" class="menu-link">归类</a>
             
           </li>
         
           <li class="menu-item">
             
-              <a href="/project/" class="menu-link">Projects</a>
-            
-          </li>
-        
-          <li class="menu-item">
-            
-              <a href="/about/" class="menu-link">About</a>
+              <a href="/about/" class="menu-link">关于</a>
             
           </li>
         
@@ -118,7 +106,8 @@
     <a href="javascript:;"></a>
   </div>
 </div>
-<main class="app-body">
+<main class="app-body flex-box">
+  <!-- Article START -->
   <article class="post-article">
     <section class="markdown-content"><p>创建发布主题页面，只有登录后才能发布主题。游客不能访问发布主题的页面。</p>
 <h3 id="创建路由"><a href="#创建路由" class="headerlink" title="创建路由"></a>创建路由</h3><p>创建主题的路由是Route::get(‘/threads/create’,’ThreadsController@create’);<br>使用resource可以替换get和post方式中的内置方法，代码如下：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Route::resource(<span class="string">'threads'</span>,<span class="string">'ThreadsController'</span>);</div><div class="line"><span class="comment">//Route::get('/threads','ThreadsController@index');</span></div><div class="line"><span class="comment">//Route::get('/threads/create','ThreadsController@create');</span></div><div class="line"><span class="comment">//Route::post('/threads','ThreadsController@store');</span></div><div class="line"><span class="comment">//Route::get('/threads/&#123;thread&#125;','ThreadsController@show');</span></div></pre></td></tr></table></figure></p>
@@ -133,6 +122,7 @@
 <h3 id="使用Adam-Wathan-编写异常处理类"><a href="#使用Adam-Wathan-编写异常处理类" class="headerlink" title="使用Adam Wathan 编写异常处理类"></a>使用<a href="https://twitter.com/adamwathan" target="_blank" rel="external">Adam Wathan</a> 编写异常处理类</h3><p>在tests/TestCase.php中添加如下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line"></div><div class="line">namespace Tests;</div><div class="line"></div><div class="line">use App\Exceptions\Handler;</div><div class="line">use Illuminate\Contracts\Debug\ExceptionHandler;</div><div class="line"></div><div class="line">use Illuminate\Foundation\Testing\TestCase as BaseTestCase;</div><div class="line"></div><div class="line">abstract class TestCase extends BaseTestCase</div><div class="line">&#123;</div><div class="line">    use CreatesApplication;</div><div class="line"></div><div class="line">    protected function setUp()</div><div class="line">    &#123;</div><div class="line">        parent::setUp();</div><div class="line">        $this-&gt;disableExceptionHandling();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    protected function signIn($user = null)</div><div class="line">    &#123;</div><div class="line">        $user = $user ?: create(&apos;App\User&apos;);</div><div class="line">        $this-&gt;actingAs($user);</div><div class="line">        return $this;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    // Hat tip, @adamwathan.</div><div class="line">    protected function disableExceptionHandling()</div><div class="line">    &#123;</div><div class="line">        $this-&gt;oldExceptionHandler = $this-&gt;app-&gt;make(ExceptionHandler::class);</div><div class="line">        $this-&gt;app-&gt;instance(ExceptionHandler::class, new class extends Handler &#123;</div><div class="line">            public function __construct() &#123;&#125;</div><div class="line">            public function report(\Exception $e) &#123;&#125;</div><div class="line">            public function render($request, \Exception $e) &#123;</div><div class="line">                throw $e;</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    protected function withExceptionHandling()</div><div class="line">    &#123;</div><div class="line">        $this-&gt;app-&gt;instance(ExceptionHandler::class, $this-&gt;oldExceptionHandler);</div><div class="line">        return $this;</div><div class="line">    &#125;</div><div class="line"></div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>然后去除前面章节中在handler.php文件render方法中添加的如下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">if (app()-&gt;environment() === &apos;testing&apos;) throw $exception;</div></pre></td></tr></table></figure></p>
 </section>
+    <!-- Tags START -->
     
       <div class="tags">
         <span>Tags:</span>
@@ -143,37 +133,61 @@
 
       </div>
     
-    <div class="money-like">
-      <div class="reward-btn">
-        赏
-        <span class="money-code">
-          <span class="alipay-code">
-            <div class="code-image"></div>
-            <b>使用支付宝打赏</b>
-          </span>
-          <span class="wechat-code">
-            <div class="code-image"></div>
-            <b>使用微信打赏</b>
-          </span>
-        </span>
-      </div>
-      <p class="notice">若你觉得我的文章对你有帮助，欢迎点击上方按钮对我打赏</p>
-    </div>
-    <div class="qrcode">
-      <canvas id="share-qrcode"></canvas>
-      <p class="notice">扫描二维码，分享此文章</p>
-    </div>
+    <!-- Tags END -->
+    <!-- 打赏 START -->
     
+      <div class="money-like">
+        <div class="reward-btn">
+          赏
+          <span class="money-code">
+            <span class="alipay-code">
+              <div class="code-image"></div>
+              <b>使用支付宝打赏</b>
+            </span>
+            <span class="wechat-code">
+              <div class="code-image"></div>
+              <b>使用微信打赏</b>
+            </span>
+          </span>
+        </div>
+        <p class="notice">若你觉得我的文章对你有帮助，欢迎点击上方按钮对我打赏</p>
+      </div>
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+      <div class="qrcode">
+        <canvas id="share-qrcode"></canvas>
+        <p class="notice">扫描二维码，分享此文章</p>
+      </div>
+    
+    <!-- 二维码 END -->
+    
+      <!-- Gitment START -->
       <div id="comments"></div>
+      <!-- Gitment END -->
     
   </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+    <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">Catalog</strong>
+    
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#创建路由"><span class="toc-nav-text">创建路由</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#middleware使用only-和-except"><span class="toc-nav-text">middleware使用only 和 except</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#新增测试test-guests-cannot-see-the-create-forum-page"><span class="toc-nav-text">新增测试test_guests_cannot_see_the_create_forum_page</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#使用Adam-Wathan-编写异常处理类"><span class="toc-nav-text">使用Adam Wathan 编写异常处理类</span></a></li></ol>
+    
+  </div>
+</aside>
+  
+  <!-- Catalog END -->
 </main>
 
 <script>
   (function () {
     var url = 'http://yoursite.com/2017/09/12/8-the-exception-handing-conundrum/';
     var banner = ''
-    if (banner !== 'undefined') {
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
       $('#article-banner').css({
         'background-image': 'url(' + banner + ')'
       })
@@ -184,32 +198,37 @@
 
      // error image
     $(".markdown-content img").on('error', function() {
-      $(this).attr('src', 'http://file.muyutech.com/error-img.png') 
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
     })
 
     // zoom image
     $(".markdown-content img").on('click', function() {
       var src = $(this).attr('src')
-      var imageW = $(this).width()
-      var imageH = $(this).height()
-      
-      var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
-      zoom = zoom < 1 ? 1 : zoom
-      zoom = zoom > 2 ? 2 : zoom
-      var transY = (($(window).height() - imageH) / 2).toFixed(2)
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+        
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
 
-      $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
-      $('.image-view-wrap').addClass('wrap-active')
-      $('.image-view-wrap img').css({
-        'width': `${imageW}`,
-        'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
-      })
-      $('html').css('overflow', 'hidden')
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
 
-      $('.image-view-wrap').on('click', function() {
-        $(this).remove()
-        $('html').attr('style', '')
-      })
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
     })
 
     // qrcode
@@ -219,15 +238,15 @@
     });
 
     // gitment
-    var gitmentConfig = "fengchunlong";
-    if (gitmentConfig != "undefined") {
+    var gitmentConfig = "yanm1ng";
+    if (gitmentConfig !== 'undefined') {
       var gitment = new Gitment({
         id: "8-the-exception-handing-conundrum",
-        owner: "fengchunlong",
-        repo: "fengchunlong.github.io",
+        owner: "yanm1ng",
+        repo: "yanm1ng.github.io",
         oauth: {
-          client_id: "cc13be481f27a102824e",
-          client_secret: "cde621cf6891b1d27eff6fe019dc5f9b91daf300"
+          client_id: "0f87e490e00ee3fd87ef",
+          client_secret: "4a9d2b148e7971c2201ad12131ce8bf8159ccd2e"
         },
         theme: {
           render(state, instance) {
@@ -252,7 +271,7 @@
 </div>
     <footer class="app-footer">
   <p class="copyright">
-    &copy; 2017 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    &copy; 2018 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
     <br>
     Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
   </p>
@@ -279,7 +298,7 @@
   async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
     $('figure pre').each(function(i, block) {
       var figure = $(this).parents('figure');
-      if (hasLine == 'false') {
+      if (hasLine === 'false') {
         figure.find('.gutter').hide();
       }
       var lang = figure.attr('class').split(' ')[1] || 'code';
